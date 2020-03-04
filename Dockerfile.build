@@ -1,0 +1,11 @@
+FROM alpine:3.11
+
+RUN apk --update add git make musl musl-dev gcc pcre-dev ncurses-dev
+
+RUN mkdir /build && git clone https://github.com/sylvainmouquet/ccze
+RUN cd /build && ./configure && make && make install
+
+#RUN echo "2018-03-02T22:33:27-06:00 ERROR something happened in this execution. " > /var/log/test
+#RUN echo "2018-03-02T22:33:27-06:00 INFO takes the value and converts it to string." >> /var/log/test
+#RUN echo "2018-03-02T22:33:27-06:00 WARN variable not in use." >> /var/log/test
+#RUN echo "2018-03-02T22:33:27-06:00 DEBUG first loop completed" >> /var/log/test
