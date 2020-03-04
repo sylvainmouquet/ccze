@@ -15,7 +15,6 @@ is http://bonehunter.rulez.org/CCZE.html.
 docker run -it alpine:3.11 sh
 apk --update add git make musl musl-dev gcc pcre-dev ncurses-dev
 mkdir /build && cd /build && git clone https://github.com/sylvainmouquet/ccze
-git checkout fix/alpine
 ./configure && make && make install
 
 cat <<EOF > /var/log/test.log
